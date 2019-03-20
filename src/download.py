@@ -35,7 +35,7 @@ class Download:
                     # 存储last_start_id
                     if i == 1:
                         if len(info) == 4:
-                            wr.clog('last_start_id.data', info[0], True)
+                            wr.clog('flag_id.data', info[0], True)
                         else:
                             # 第一张个li就出现了问题，这就无法存储last_start_id了
                             exit()
