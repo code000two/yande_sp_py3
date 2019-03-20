@@ -47,7 +47,11 @@ class Save:
             file.close()
             print("更新最新图片id成功")
         else:
-            print("下载结束不写入flag")
+            file_name = self._folder_name + '/' + file_name
+            file = open(file_name, 'wb')
+            file.write(data.encode())
+            file.close()
+            print("保存下载日志成功")
 
     '''
         获取flag文件中的图片id    
