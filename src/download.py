@@ -3,6 +3,7 @@ import yande_re
 import log
 import phttp
 import time
+import datetime
 
 class Download:
     def do_download(self,pic_size: {}, page, max_page, pic_type, path):
@@ -84,6 +85,8 @@ class Download:
                         # 获取文件名
                         # 此处不进行URL解码，因为有些文件名神TM带*之类的
                         file_name = info[1].split('/')[-1]
+                        # 提供时间戳命名格式 但可能会影响判断文件是否存在
+                        # file_name = datetime.datetime.now().strftime('%Y%m%d') + "-" + info[0] + "-" + file_name
                         # 文件是否已存在？
                         if wr.exists(file_name):
                             lg.add(info[0] + ' 已存在，跳过')
